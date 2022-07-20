@@ -21,6 +21,7 @@ class handDetector():
 
         self.hands = self.mpHands.Hands(max_num_hands=3)
         self.mpDraw = mp.solutions.drawing_utils
+        self.tipIds = [4, 8, 12, 16, 20]
 
     def findHands(self, img, draw=True):
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -36,7 +37,7 @@ class handDetector():
 
     def findPostion(self, img, handNo=0, draw=True):
 
-        lmList = []
+        self.lmList = []
         if self.results.multi_hand_landmarks:
             myHand = self.results.multi_hand_landmarks[handNo]
             for id, lm in enumerate(myHand.landmark):
@@ -44,11 +45,32 @@ class handDetector():
                 h, w, c = img.shape
                 cx, cy = int(lm.x*w), int (lm.y*h)
                 # print(id, cx, cy) # id x y
-                lmList.append([id, cx, cy])
+                self.lmList.append([id, cx, cy])
                 if draw:
                     cv2.circle(img, (cx,cy), 7, (255,0,0),cv2.FILLED) # bgr
 
-        return lmList
+        return self.lmList
+
+    def finersUp(self):
+        fingers = []
+
+        # Thumb, left hand is <
+        # Thumb, right hand is >
+        if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]:
+            # print("Index finger open")
+            fingers.append(1)
+        else:
+            fingers.append(0)
+
+        # 4 Fingers
+        for id in range(1, 5):
+            if self.lmList[self.tipIds[id]][2] < self.lmList[self.tipIds[id] - 2][2]:
+                # print("Index finger open")
+                fingers.append(1)
+            else:
+                fingers.append(0)
+
+        return fingers
 
 def main():
     pTime = 0
