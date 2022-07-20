@@ -7,6 +7,7 @@ import HandTrackingMoudule as htm
 
 ###########################
 brushThickness = 5
+eraserThickness = 50
 ###########################
 
 folderPath = "Header"
@@ -22,7 +23,7 @@ for imPath in myList:
 
 # print(len(overlayList))
 header = overlayList[0]
-drawColor = (255,102,178)
+drawColor = (255,255,255)
 
 
 cap = cv2.VideoCapture(0)
@@ -41,10 +42,11 @@ while True:
     img = cv2.flip(img, 1) # 取消镜像
 
     # 2. Find hand landmarks
-    img = detector.findHands(img)
+    img = detector.findHands(img,draw=False)
     lmList = detector.findPostion(img,draw=False)
 
     if len(lmList) != 0:
+
         # print(lmList)
 
 
@@ -59,8 +61,9 @@ while True:
         # print(fingers)
         # 4. If selection mode - two fingers are up
         if fingers[1] and fingers[2]:
+            xp, yp = 0, 0
             # cv2.rectangle(img, (x1, y1-15), (x2, y2+15), drawColor, cv2.FILLED)
-            print("Slection Mode")
+            # print("Slection Mode")
             # Cheking for the lick
             temh = 64
             if y1 < 64:
@@ -76,31 +79,37 @@ while True:
                 elif 515 < x1 < 620:
                     header = overlayList[4]
                     drawColor = (0, 0, 0)
-                    brushThickness = 20
+                    # brushThickness = eraserThickness
             cv2.rectangle(img, (x1, y1 - 15), (x2, y2 + 15), drawColor, cv2.FILLED)
 
         # 5. If Drawing Mode - index finger is up
         if fingers[1] and fingers[2] == False:
             cv2.circle(img, (x1, y1), 5,drawColor, cv2.FILLED)
-            print("Draw Mode")
+            # print("Draw Mode")
             if xp == 0 and yp == 0:
                 xp, yp = x1, y1
 
-            cv2.line(img, (xp,yp), (x1, y1), drawColor, brushThickness)
-            cv2.line(imgCanvas, (xp,yp), (x1, y1), drawColor, brushThickness)
+            if drawColor == (0,0,0):
+                cv2.line(img, (xp, yp), (x1, y1), drawColor, eraserThickness)
+                cv2.line(imgCanvas, (xp, yp), (x1, y1), drawColor, eraserThickness)
+            else:
+                cv2.line(img, (xp,yp), (x1, y1), drawColor, brushThickness)
+                cv2.line(imgCanvas, (xp,yp), (x1, y1), drawColor, brushThickness)
 
             xp, yp = x1, y1
-
-
-
-
+    imgGray = cv2.cvtColor(imgCanvas, cv2.COLOR_BGR2GRAY)
+    _, imgInv = cv2.threshold(imgGray, 50, 255, cv2.THRESH_BINARY_INV)
+    imgInv = cv2.cvtColor(imgInv, cv2.COLOR_GRAY2BGR)
+    img = cv2.bitwise_and(img, imgInv)
+    img = cv2.bitwise_or(img, imgCanvas)
 
     # setting the header image
     h,w,c=header.shape
     img[0:h,0:w] = header  # img[h, w]
-    img = cv2.addWeighted(img, 0.5, imgCanvas, 0.5, 0)
+    # img = cv2.addWeighted(img, 0.5, imgCanvas, 0.5, 0)
     cv2.imshow("Painting", img)
-    cv2.imshow("imgCanvas", imgCanvas)
+    # cv2.imshow("imgCanvas", imgCanvas)
+    # cv2.imshow("imgIvc", imgInv)
     cv2.waitKey(1)
 
 

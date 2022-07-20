@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="70a5210c-400b-4a2b-a73a-5a14f47d1aa9" name="Default Changelist" comment="wait to fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HandTrackingMoudule.py" beforeDir="false" afterPath="$PROJECT_DIR$/HandTrackingMoudule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Header/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/Header/0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Header/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Header/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Header/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Header/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Header/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Header/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Header/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Header/4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VirtualPainter.py" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualPainter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +128,7 @@
       <option name="presentableId" value="Default" />
       <updated>1658236265870</updated>
       <workItem from="1658236268944" duration="6118000" />
-      <workItem from="1658284770247" duration="12180000" />
+      <workItem from="1658284770247" duration="13638000" />
     </task>
     <task id="LOCAL-00001" summary="mp test">
       <created>1658236747364</created>
@@ -182,7 +176,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="wait to fix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HandTracking_VolumeHandContal_FingerCountingProject$VirtualPainter.coverage" NAME="VirtualPainter Coverage Results" MODIFIED="1658328328319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HandTracking_VolumeHandContal_FingerCountingProject$VirtualPainter.coverage" NAME="VirtualPainter Coverage Results" MODIFIED="1658329450653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HandTracking_VolumeHandContal_FingerCountingProject$FingerCountingProject.coverage" NAME="FingerCountingProject Coverage Results" MODIFIED="1658280009102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HandTracking_VolumeHandContal_FingerCountingProject$HandTrackingMoudule.coverage" NAME="HandTrackingMoudule Coverage Results" MODIFIED="1658285065132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
