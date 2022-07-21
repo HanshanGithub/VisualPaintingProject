@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="70a5210c-400b-4a2b-a73a-5a14f47d1aa9" name="Default Changelist" comment="wait to fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualPainter.py" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualPainter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HandTrackingMin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyNewGameHandTraking.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VolumHandControl.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +131,7 @@
       <updated>1658236265870</updated>
       <workItem from="1658236268944" duration="6118000" />
       <workItem from="1658284770247" duration="14106000" />
+      <workItem from="1658386307370" duration="367000" />
     </task>
     <task id="LOCAL-00001" summary="mp test">
       <created>1658236747364</created>
